@@ -14,7 +14,10 @@ module.exports = (env, args) => {
     },
 
     resolve: {
-      extensions: [".ts", ".tsx", ".js"]
+      extensions: [".ts", ".tsx", ".js"],
+      alias:{
+        "@component": path.resolve(__dirname, "src", "component")
+      }
     },
 
     module: {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
 import React from "react";
+import App from "./App";
 
 describe("App component", () => {
 
@@ -9,4 +9,4 @@ describe("App component", () => {
     expect(screen.getByText("My React application")).toBeInTheDocument();
   });
 
-})
+});
