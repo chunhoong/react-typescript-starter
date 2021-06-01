@@ -15,10 +15,10 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@component/*": ["src/component/*"]
+      "@component/*": ["component/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src"]
 }
