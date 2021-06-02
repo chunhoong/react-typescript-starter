@@ -2,12 +2,11 @@ body {
   font-family: "Roboto Light", "Segoe UI", sans-serif;
 }
 
+h1 {
+  font-weight: 600;
+}
+
 .container {
   padding-left: 180px;
   padding-right: 180px;
-}
-
-.card-holder {
-  display: flex;
-  justify-content: space-between;
 }

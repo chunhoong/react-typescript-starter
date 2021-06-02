@@ -17,7 +17,8 @@
     "noImplicitReturns": true,
     "baseUrl": "./src",
     "paths": {
-      "@component/*": ["component/*"]
+      "@component/*": ["component/*"],
+      "@dashboard/*": ["dashboard/*"]
     }
   },
   "include": ["src"]

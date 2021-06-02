@@ -1,19 +1,18 @@
-import React from "react";
-import Card from "@component/Card";
+import React, { StrictMode, Suspense } from "react";
 import "./App.scss";
+import { BrowserRouter, Route } from "react-router-dom";
+import LoadingPage from "@component/LoadingPage";
+
+const DashboardPage = React.lazy(() => import("@dashboard/DashboardPage"));
 
 const App: React.FC = () => (
-  <>
-    <div className="container">
-      <h1>My React application</h1>
-      <div className="card-holder">
-        <Card id="first" title="First title" description="Description of first title" />
-        <Card id="second" title="Second title" description="Description of second title" />
-        <Card id="third" title="Third title" description="Description of third title" />
-        <Card id="forth" title="Forth title" description="Description of forth title" />
-      </div>
-    </div>
-  </>
+  <Suspense fallback={<LoadingPage />}>
+    <BrowserRouter>
+      <StrictMode>
+        <Route exact path="/dashboard" component={DashboardPage} />
+      </StrictMode>
+    </BrowserRouter>
+  </Suspense>
 );
 
 export default App;
