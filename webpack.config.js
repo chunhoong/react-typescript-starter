@@ -15,9 +15,10 @@ module.exports = (env, args) => {
 
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
-      alias:{
+      alias: {
         "@component": path.resolve(__dirname, "src", "component"),
-        "@dashboard": path.resolve(__dirname, "src", "dashboard")
+        "@dashboard": path.resolve(__dirname, "src", "dashboard"),
+        "@accountDetail": path.resolve(__dirname, "src", "accountDetail")
       }
     },
 
@@ -42,11 +43,10 @@ module.exports = (env, args) => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({template: path.resolve(__dirname, "public", "index.html")}),
+      new HtmlWebpackPlugin({ template: path.resolve(__dirname, "public", "index.html") }),
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
-        chunkFilename: "[id].[contenthash].css"
-      })    ],
+        filename: "[name].[contenthash].css"
+      })],
 
     devServer: {
       contentBase: path.join(__dirname, "build"),
@@ -57,7 +57,16 @@ module.exports = (env, args) => {
     devtool: isProduction ? "source-map" : "eval-source-map",
 
     optimization: {
-      minimizer: [`...`, new CssMinimizerPlugin()]
+      minimizer: [`...`, new CssMinimizerPlugin()],
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            name: "vendor",
+            test: /[\\/]node_modules[\\/]/,
+            chunks: "all",
+          }
+        }
+      }
     },
 
     performance: {

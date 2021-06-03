@@ -13,4 +13,4 @@ describe("Dashboard page", () => {
     expect(cardHolders[0].childElementCount).toBe(4);
   });
 
-})
+});

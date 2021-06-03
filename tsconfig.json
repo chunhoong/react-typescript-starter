@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ES6",
     "lib": [
@@ -18,7 +18,8 @@
     "baseUrl": "./src",
     "paths": {
       "@component/*": ["component/*"],
-      "@dashboard/*": ["dashboard/*"]
+      "@dashboard/*": ["dashboard/*"],
+      "@accountDetail/*": ["accountDetail/*"]
     }
   },
   "include": ["src"]

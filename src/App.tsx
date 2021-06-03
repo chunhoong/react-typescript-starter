@@ -1,18 +1,22 @@
 import React, { StrictMode, Suspense } from "react";
 import "./App.scss";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoadingPage from "@component/LoadingPage";
 
-const DashboardPage = React.lazy(() => import("@dashboard/DashboardPage"));
+const DashboardPage = React.lazy(() => import(/* webpackChunkName: "dashboard" */ "@dashboard/DashboardPage"));
+const AccountDetailPage = React.lazy(() => import(/* webpackChunkName: "account-detail" */ "@accountDetail/AccountDetailPage"))
 
 const App: React.FC = () => (
-  <Suspense fallback={<LoadingPage />}>
+  <StrictMode>
     <BrowserRouter>
-      <StrictMode>
-        <Route exact path="/dashboard" component={DashboardPage} />
-      </StrictMode>
+      <Suspense fallback={<LoadingPage />}>
+        <Switch>
+          <Route exact path="/dashboard" component={DashboardPage} />
+          <Route exact path="/account-detail" component={AccountDetailPage} />
+        </Switch>
+      </Suspense>
     </BrowserRouter>
-  </Suspense>
+  </StrictMode>
 );
 
 export default App;
