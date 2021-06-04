@@ -3,10 +3,9 @@ import "./App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoadingPage from "@component/LoadingPage";
 
+// prettier-ignore
+const AccountDetailPage = React.lazy(() => import(/* webpackChunkName: "account-detail" */ "@accountDetail/AccountDetailPage"));
 const DashboardPage = React.lazy(() => import(/* webpackChunkName: "dashboard" */ "@dashboard/DashboardPage"));
-const AccountDetailPage = React.lazy(
-  () => import(/* webpackChunkName: "account-detail" */ "@accountDetail/AccountDetailPage")
-);
 
 const App: React.FC = () => (
   <StrictMode>
