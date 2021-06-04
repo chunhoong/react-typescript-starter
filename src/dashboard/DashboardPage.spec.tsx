@@ -3,7 +3,6 @@ import React from "react";
 import DashboardPage from "./DashboardPage";
 
 describe("Dashboard page", () => {
-
   it("should render", () => {
     const { container } = render(<DashboardPage />);
     const cardHolders = container.getElementsByClassName("card-holder");
@@ -12,5 +11,4 @@ describe("Dashboard page", () => {
     expect(cardHolders.length).toBe(1);
     expect(cardHolders[0].childElementCount).toBe(4);
   });
-
 });

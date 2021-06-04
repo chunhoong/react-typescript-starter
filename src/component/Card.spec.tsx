@@ -3,7 +3,6 @@ import React from "react";
 import Card from "./Card";
 
 describe("Card component", () => {
-
   const title = "Some title";
   const description = "Some description";
 
@@ -21,5 +20,4 @@ describe("Card component", () => {
     expect(container.querySelector(`#${titleId}`).innerHTML).toBe(title);
     expect(container.querySelector(`#${descriptionId}`).innerHTML).toBe(description);
   });
-
 });

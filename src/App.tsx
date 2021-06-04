@@ -4,7 +4,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoadingPage from "@component/LoadingPage";
 
 const DashboardPage = React.lazy(() => import(/* webpackChunkName: "dashboard" */ "@dashboard/DashboardPage"));
-const AccountDetailPage = React.lazy(() => import(/* webpackChunkName: "account-detail" */ "@accountDetail/AccountDetailPage"))
+const AccountDetailPage = React.lazy(
+  () => import(/* webpackChunkName: "account-detail" */ "@accountDetail/AccountDetailPage")
+);
 
 const App: React.FC = () => (
   <StrictMode>
